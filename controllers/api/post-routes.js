@@ -76,20 +76,20 @@ router.get('/:id', (req, res) => {
       });
   });
 
-// // creating a post
-// router.post('/', withAuth, (req, res) => {
-//     // create 1 post
-//     Post.create({ 
-//         title: req.body.title,
-//         content: req.body.content,
-//         user_id: req.session.user_id
-//     })
-//         .then(dbPostData => res.json(dbPostData))
-//         .catch(err => {
-//             console.log(err);
-//             res.status(500).json(err); 
-//         });
-// });
+// creating a post
+router.post('/', withAuth, (req, res) => {
+    // create 1 post
+    Post.create({ 
+        title: req.body.title,
+        content: req.body.content,
+        user_id: req.session.user_id
+    })
+        .then(dbPostData => res.json(dbPostData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err); 
+        });
+});
 
 
 
